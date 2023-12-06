@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank Dashboard</title>
+    <!-- tailwind link -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <h1 class="text-4xl font-semibold text-center mt-5 mb-5">Welcome To Your Bank</h1>   
+    </header> 
+
+    <main>
+        <!-- overview of transactions section -->
+        <section>
+            <div class="grid grid-cols-3 gap-4 w-9/12 mx-auto text-white mt-12">
+                <div class="bg-orange-400 p-8 rounded">
+                    <h1 class="text-2xl">Deposit</h1>
+                    <h1 class="text-3xl">$<span id="deposit-total">00</span></h1>
+                </div>
+                <div class="bg-blue-400 p-8 rounded">
+                    <h1 class="text-2xl">Withdraw</h1>
+                    <h1 class="text-3xl">$<span id="withdraw-total">00</span></h1>
+                </div>
+                <div class="bg-violet-400 p-8 rounded">
+                    <h1 class="text-2xl">Balance</h1>
+                    <h1 class="text-3xl">$<span id="balance-total">1245</span></h1>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- deposit and withdraw section -------------------------------------->
+        <section>
+            <!-- deposit section -->
+            <div class="grid grid-cols-2 gap-4 w-9/12 mx-auto mt-12">
+                <div class="bg-cyan-400 p-8 rounded">
+                    <h1 class="text-2xl font-bold mt-5 text-white">Enetr Deposit Amount</h1>
+                    <input  class="rounded block w-4/5 p-1 mb-2 mt-1" type="number" name="" id="deposit-field" placeholder="Deposit Amount">
+                    <button id="btn-deposit" class="bg-slate-100 px-2 p-1 mb-2 text-lime-500 hover:bg-lime-500 hover:text-white font-bold rounded">DEPOSIT</button>
+                </div>
+                <!-- withdraw section -->
+                <div class="bg-fuchsia-400 p-8 rounded">
+                    <h1 class="text-2xl font-bold mt-5 text-white">Enetr Withdraw Amount</h1>
+                    <input  class="rounded block w-4/5 p-1 mb-2 mt-1" type="number" name="" id="withdraw-field" placeholder="Withdraw Amount">
+                    <button id="btn-withdraw" class="bg-slate-100 px-2 p-1 mb-2 text-lime-500 hover:bg-lime-500 hover:text-white font-bold rounded">WITHDRAW</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <!-- scripts -->
+    <script src="js/login.js"></script>
+    <script src="js/deposit.js"></script>
+    <script src="js/withdraw.js"></script>
+</body>
+</html>
