@@ -16,11 +16,6 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
     const previousWithdrawAmountString = previousWithdrawAmountField.innerText;
     const previousWithdrawAmount = parseFloat(previousWithdrawAmountString);
 
-    // add the previous withdrawal amount with new withdrawal amount
-    const currentWithdrawAmount = newWithdrawAmount + previousWithdrawAmount;
-    previousWithdrawAmountField.innerText = currentWithdrawAmount;
-    newWithdrawField.value = '';
-
     // minus the withdrawal amount from the balance
     const previousTotalAmountField = document.getElementById('balance-total');
     const previousTotalAmountString = previousTotalAmountField.innerText;
@@ -32,6 +27,11 @@ document.getElementById('btn-withdraw').addEventListener('click', function () {
         newWithdrawField.value = '';
         return;
     }
+
+    // add the previous withdrawal amount with new withdrawal amount
+    const currentWithdrawAmount = newWithdrawAmount + previousWithdrawAmount;
+    previousWithdrawAmountField.innerText = currentWithdrawAmount;
+    newWithdrawField.value = '';
 
     // update the total amount in the balance
     const currentTotalAmount = previousTotalAmount - newWithdrawAmount;
